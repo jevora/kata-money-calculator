@@ -16,6 +16,7 @@
         <main>software.ulpgc.kata.mc.Main</main>
         <version>1.0.0</version>
         <docker.user>joseevora</docker.user>
+        <docker.command>docker</docker.command>
     </properties>
 
     <build>
@@ -60,7 +61,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>docker</executable>
+                            <executable>${docker.command}</executable>
                             <arguments>
                                 <argument>build</argument>
                                 <argument>.</argument>
@@ -76,7 +77,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>docker</executable>
+                            <executable>${docker.command}</executable>
                             <arguments>
                                 <argument>push</argument>
                                 <argument>${docker.user}/${system}-${name}:${version}</argument>
